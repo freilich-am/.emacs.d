@@ -1,0 +1,55 @@
+#+STARTUP: overview 
+#+PROPERTY: header-args :comments yes :results silent
+
+* Helm
+#+BEGIN_SRC emacs-lisp
+(require 'helm-config)
+#+END_SRC
+
+* ido Mode
+#+BEGIN_SRC emacs-lisp
+(setq ido-enable-flex-matching t)
+(setq ido-everywhere t)
+(ido-mode 1)
+#+END_SRC
+
+* repos
+#+BEGIN_SRC emacs-lisp
+(load-theme 'alect-black-alt t)
+(set-face-attribute 'default nil :height 150)
+#+END_SRC
+
+* neotree
+#+BEGIN_SRC emacs-lisp
+(require 'neotree)
+(setq neo-smart-open t)
+(global-set-key (kbd "C-x C-n") 'neotree-toggle)
+(global-set-key (kbd "C-c d") 'neotree-dir)
+#+END_SRC
+
+* personal hotkeys
+#+BEGIN_SRC emacs-lisp
+(global-set-key "\M-n" '(lambda () (interactive) (forward-line 9)))
+(global-set-key "\M-p" '(lambda () (interactive) (previous-line 9)))
+#+END_SRC
+
+* autocomplete?
+#+BEGIN_SRC emacs-lisp
+(use-package auto-complete 
+:ensure t
+:init
+(progn
+(ac-config-default)
+  (global-auto-complete-mode t)
+ ))
+#+END_SRC
+
+* style
+#+BEGIN_SRC emacs-lisp
+(load-theme 'alect-black-alt t)
+(set-face-attribute 'default nil :height 150)
+#+END_SRC
+* magit
+#+BEGIN_SRC emacs-lisp
+(global-set-key (kbd "C-x g") 'magit-status)
+#+END_SRC
