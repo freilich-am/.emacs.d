@@ -1,3 +1,7 @@
+;; I suspect more of this file can be moved to myinit.org
+;; The last time I tried I think I broke my local emacs
+;; so most of it moved, but what's here stays
+
 (setq inhibit-startup-message t)
 (tool-bar-mode -1) 
 
