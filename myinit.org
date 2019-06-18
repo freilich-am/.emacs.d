@@ -49,7 +49,17 @@
 (load-theme 'alect-black-alt t)
 (set-face-attribute 'default nil :height 150)
 #+END_SRC
+
 * magit
 #+BEGIN_SRC emacs-lisp
 (global-set-key (kbd "C-x g") 'magit-status)
+(require 'magit-gitflow)
+(add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 #+END_SRC
+* path variable setting 
+#+BEGIN_SRC emacs-lisp
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+#+END_SRC
+EOF
+
