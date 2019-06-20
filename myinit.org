@@ -55,6 +55,10 @@
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
 #+END_SRC
+* javascript
+#+BEGIN_SRC emacs-lisp
+(setq js-indent-level 2)
+#+END_SRC
 * path variable setting 
 #+BEGIN_SRC emacs-lisp
 (when (memq window-system '(mac ns x))
