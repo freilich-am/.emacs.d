@@ -16,7 +16,7 @@
 * style
 #+BEGIN_SRC emacs-lisp
 (load-theme 'alect-black-alt t)
-(set-face-attribute 'default nil :height 150)
+(set-face-attribute 'default nil :height 180)
 #+END_SRC
 * neotree
 #+BEGIN_SRC emacs-lisp
@@ -46,7 +46,7 @@
 * style
 #+BEGIN_SRC emacs-lisp
 (load-theme 'alect-black-alt t)
-(set-face-attribute 'default nil :height 150)
+(set-face-attribute 'default nil :height 180)
 #+END_SRC
 
 * magit
@@ -68,4 +68,29 @@
 #+BEGIN_SRC emacs-lisp
 (setq confirm-kill-emacs 'y-or-n-p)
 #+END_SRC
+* Flyckech
+(add-hook 'js2-mode-hook
+          (defun my-js2-mode-setup ()
+            (flycheck-mode t)
+            (when (executable-find "eslint")
+              (flycheck-select-checker 'javascript-eslint))))
+(require 'flycheck)
+#+BEGIN_SRC emacs-lisp
+;; turn on flychecking globally
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
+;; disable jshint since we prefer eslint checking
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint)))
+
+
+(flycheck-add-mode 'javascript-eslint 'web-mode)
+
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode t))
+#+END_SRC
+
 EOF
