@@ -16,7 +16,7 @@
 * style
 #+BEGIN_SRC emacs-lisp
 (load-theme 'alect-black-alt t)
-(set-face-attribute 'default nil :height 180)
+(set-face-attribute 'default nil :height 200)
 #+END_SRC
 * neotree
 #+BEGIN_SRC emacs-lisp
@@ -47,6 +47,8 @@
 #+BEGIN_SRC emacs-lisp
 (load-theme 'alect-black-alt t)
 (set-face-attribute 'default nil :height 180)
+
+(setq column-number-mode t)
 #+END_SRC
 
 * magit
@@ -68,15 +70,26 @@
 #+BEGIN_SRC emacs-lisp
 (setq confirm-kill-emacs 'y-or-n-p)
 #+END_SRC
-* Flyckech
+* rainbow del
+#+BEGIN_SRC emacs-lisp
+(require 'rainbow-delimiters)
+(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+#+END_SRC
+* Flycheck
 (add-hook 'js2-mode-hook
           (defun my-js2-mode-setup ()
             (flycheck-mode t)
             (when (executable-find "eslint")
               (flycheck-select-checker 'javascript-eslint))))
 (require 'flycheck)
+
 #+BEGIN_SRC emacs-lisp
 ;; turn on flychecking globally
+(use-package flycheck
+  :ensure t
+  :init
+  (global-flycheck-mode t))
+
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 ;; disable jshint since we prefer eslint checking
@@ -84,13 +97,12 @@
   (append flycheck-disabled-checkers
     '(javascript-jshint)))
 
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-eslint)))
 
-(flycheck-add-mode 'javascript-eslint 'web-mode)
+(flycheck-add-mode 'typescript-tslint 'ts-mode)
 
-(use-package flycheck
-  :ensure t
-  :init
-  (global-flycheck-mode t))
 #+END_SRC
 
 EOF
