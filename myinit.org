@@ -17,6 +17,7 @@
 #+BEGIN_SRC emacs-lisp
 (load-theme 'alect-black-alt t)
 (set-face-attribute 'default nil :height 200)
+(setq-default indent-tabs-mode nil)
 #+END_SRC
 * neotree
 #+BEGIN_SRC emacs-lisp
