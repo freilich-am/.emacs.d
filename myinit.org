@@ -109,3 +109,5 @@
 #+BEGIN_SRC emacs-lisp
 (global-diff-hl-mode)
 #+END_SRC
+
+EOF
