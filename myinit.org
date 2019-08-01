@@ -105,5 +105,7 @@
 (flycheck-add-mode 'typescript-tslint 'ts-mode)
 
 #+END_SRC
-
-EOF
+* diff-hl
+#+BEGIN_SRC emacs-lisp
+(global-diff-hl-mode)
+#+END_SRC
