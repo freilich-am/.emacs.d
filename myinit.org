@@ -1,4 +1,4 @@
-#+STARTUP: overview 
+#+STARTUP: overview
 #+PROPERTY: header-args :comments yes :results silent
 
 * Helm
@@ -25,6 +25,7 @@
 (setq neo-smart-open t)
 (global-set-key (kbd "C-x C-n") 'neotree-toggle)
 (global-set-key (kbd "C-c d") 'neotree-dir)
+(setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 #+END_SRC
 
 * personal hotkeys
@@ -35,7 +36,7 @@
 
 * autocomplete?
 #+BEGIN_SRC emacs-lisp
-(use-package auto-complete 
+(use-package auto-complete
 :ensure t
 :init
 (progn
@@ -62,7 +63,7 @@
 #+BEGIN_SRC emacs-lisp
 (setq js-indent-level 2)
 #+END_SRC
-* path variable setting 
+* path variable setting
 #+BEGIN_SRC emacs-lisp
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
@@ -109,5 +110,21 @@
 #+BEGIN_SRC emacs-lisp
 (global-diff-hl-mode)
 #+END_SRC
+* all the icons
+#+BEGIN_SRC emacs-lisp
+(use-package all-the-icons
+:ensure t
+:defer 0.5)
+#+END_SRC
 
+* aggressive indent
+#+BEGIN_SRC emacs-lisp
+(use-package aggressive-indent
+:ensure t
+:config
+(global-aggressive-indent-mode 1)
+;;(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
+)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+#+END_SRC
 EOF
