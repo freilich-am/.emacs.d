@@ -126,5 +126,9 @@
 ;;(add-to-list 'aggressive-indent-excluded-modes 'html-mode)
 )
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(use-package yasnippet
+:ensure t
+:init
+(yas-global-mode 1))
 #+END_SRC
 EOF
