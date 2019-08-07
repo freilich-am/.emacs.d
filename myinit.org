@@ -58,6 +58,8 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (require 'magit-gitflow)
 (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
+(use-package forge
+  :after magit)
 #+END_SRC
 * javascript
 #+BEGIN_SRC emacs-lisp
@@ -130,5 +132,16 @@
 :ensure t
 :init
 (yas-global-mode 1))
+
+
+;; is this necessary
+(use-package yasnippet-snippets)
+
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "<C-tab>") 'yas-expand)
+
+;; this probably shouldn't be global
+(global-set-key (kbd "C-x i") 'import-js-import)
 #+END_SRC
 EOF
