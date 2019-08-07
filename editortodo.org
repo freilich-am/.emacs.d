@@ -6,13 +6,14 @@
 ** DONE (is there git stuff I need to do or learn to do in magit? deleting branches?)
 ** DONE yasnippet
 ** DONE indentation
+** DONE automatic imports (i.e. i'm trying to use something, automatically add an import for it (in JS)
 
 * things to work out now:
-** TODO integrate properly with github??
+** TODO integrate properly with github?? (Done with magit forge, get used to it)
 
 * nice to have
 ** trying packages
 
 * long term
-** rally/slack/github integration
-** automatic imports (i.e. i'm trying to use something, automatically add an import for it
+** rally/slack integration
+** ideas for getting better at reading code
