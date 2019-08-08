@@ -25,6 +25,7 @@
 (setq neo-smart-open t)
 (global-set-key (kbd "C-x C-n") 'neotree-toggle)
 (global-set-key (kbd "C-c d") 'neotree-dir)
+(global-set-key (kbd "C-c e") (lambda() (interactive) (neotree-dir "~/embark/embark2/")))
 (setq neo-theme (if (display-graphic-p) 'icons 'arrow))
 #+END_SRC
 
@@ -104,6 +105,9 @@
 (setq-default flycheck-disabled-checkers
   (append flycheck-disabled-checkers
     '(javascript-eslint)))
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(html-tidy)))
 
 (flycheck-add-mode 'typescript-tslint 'ts-mode)
 
