@@ -8,12 +8,12 @@
 ** DONE indentation
 ** DONE automatic imports (i.e. i'm trying to use something, automatically add an import for it (in JS)
 
-* things to work out now:
-** TODO integrate properly with github?? (Done with magit forge, get used to it)
-
 * nice to have
+** TODO integrate properly with github?? (Done with magit forge, get used to it)
 ** trying packages
-
+** acewindow? (or other window manager)
+** XMonad (not really editor)
+** Keyboard based browser (eg 'next', also not really browser)
 * long term
 ** rally/slack integration
 ** ideas for getting better at reading code
