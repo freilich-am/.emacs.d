@@ -147,5 +147,11 @@
 
 ;; this probably shouldn't be global
 (global-set-key (kbd "C-x i") 'import-js-import)
+
+;; by setting these registers, you can open these files automatically
+;; with C-x r j then the key after ?
+(set-register ?e (cons 'file "~/.emacs.d/myinit.org"))
+(set-register ?i (cons 'file "~/.emacs.d/editortodo.org"))
+
 #+END_SRC
 EOF
